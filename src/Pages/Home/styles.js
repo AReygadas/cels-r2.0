@@ -162,6 +162,7 @@ export const ChatImage = styled.img`
 `;
 
 export const TextoAnimado=styled.img`
-  width: 100%;
-  padding-top:18% ;
+  height: 100%;
+  width:100% ;
+  padding-top:0 ;
 `;

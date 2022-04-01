@@ -12,7 +12,7 @@ const [mont2,setMont2]=useState("");
 
   return (
     <>
-      <section>
+      <section style={{background: "linear-gradient(180deg, rgba(251,13,246,1) 0%, rgba(20,236,255,1) 100%)"}}>
         <div className="container-fluid">
           <div className="container">
             <div className="row" >

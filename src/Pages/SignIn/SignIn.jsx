@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Swal from "sweetalert2";
-import { TT01, Background,Padre, Card, InputD, InputA, SingButton, Vid,LogoC,DivAcount } from "./styles";
+import { CardHeader, TT01, Background,Padre, Card, InputD, InputA, SingButton, Vid,LogoC,DivAcount } from "./styles";
 import Logo from '../../Images/Logo.png'
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 import { gapi } from "gapi-script";
-
+import { FaGooglePlusG,FaFacebookF  } from "react-icons/fa";
 
 export const SignIn = () => {
   const [credentials, setCredentials] = useState({
@@ -80,8 +80,24 @@ export const SignIn = () => {
       </Vid>
       {/* <LogoC src={Logo} /> */}
       <Padre>
-        <Card>
-          <TT01>Login</TT01>
+        <Card style={{ height:"auto"}}>
+          <CardHeader >
+            <TT01>Log in</TT01>            
+            < GoogleLogin
+                 
+                clientId = "567951774801-h1ll3t6sqsac1hldm26ioqihvigprrad.apps.googleusercontent.com" 
+                buttonText = "Iniciar sesión" 
+                onSuccess = { responseGoogle } 
+                onFailure = { responseGoogle } 
+                cookiePolicy={'single_host_origin'} 
+                render={renderProps => (
+                  <FaGooglePlusG size={45} onClick={renderProps.onClick} disabled={renderProps.disabled} />
+                )}
+              />           
+            <FaFacebookF size={40} />
+          </CardHeader>
+          
+          <div style={{padding:"4%", height:"50vh"}}>
           <InputD>
             <InputA
               placeholder="Nombre"
@@ -113,21 +129,13 @@ export const SignIn = () => {
           <p>Remember me</p> | <p>Forgot Password?</p>
           </DivAcount>
           <SingButton onClick={() => handleSubmit()}> Create newaccount </SingButton>
-              <br />   <br />
-              < GoogleLogin 
-                clientId = "567951774801-h1ll3t6sqsac1hldm26ioqihvigprrad.apps.googleusercontent.com" 
-                buttonText = "Iniciar sesión" 
-                onSuccess = { responseGoogle } 
-                onFailure = { responseGoogle } 
-                cookiePolicy={'single_host_origin'} 
-              />
           
           {/* <GoogleLogout
               clientId = "567951774801-h1ll3t6sqsac1hldm26ioqihvigprrad.apps.googleusercontent.com" 
               buttonText = "cerrar sesion" 
               onLogoutSuccess= { responseGoogle2 } 
           /> */}
-
+          </div>
         </Card>
       </Padre>
     </Background>

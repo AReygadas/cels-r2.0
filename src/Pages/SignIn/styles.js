@@ -34,7 +34,8 @@ export const Card = styled.div`
     color:#fff ;
     margin-top:5rem;
     margin: auto ;
-    padding: 4% 3% 10% 3%;
+      padding:0 ;
+    //padding: 4% 3% 10% 3%;
     position: relative;        
     height: 35vh;
     width: 20vw;    
@@ -139,3 +140,11 @@ export const Btn001 = styled.button`
 export const TT01=styled.h1`
     margin-top:-1rem;
 `;
+
+export const CardHeader = styled.div`
+  background: linear-gradient(274deg, rgba(8,44,125,1) 0%, rgba(20,175,255,1) 100%);
+  width: 100% ;
+  padding: 30px 7px 7px 7px ;
+  
+
+`

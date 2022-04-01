@@ -24,14 +24,9 @@ export const Home = () => {
        <Vid loop autoPlay muted>
           <source src='https://celsuniversity.academy/login_loop.mp4' />
         </Vid> 
-        <div>
-
+       
           <TextoAnimado src={Img002} />
-          <a href="#Background2">
-           <Btn001> Empezar AHORA!</Btn001>
-          </a>
-        </div>
-      </Background>
+               </Background>
       <PricingTab />
       <ChatbootContainer >
         {chat &&
