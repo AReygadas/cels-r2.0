@@ -13,6 +13,7 @@ import { PricingTab } from "../../Components/PricingTable/Pricing";
 import "react-chatbot-kit/build/main.css";
 import ChatIcon from '../../Images/Chat.png'
 import Img002 from '../../Images/prueba-2.gif';
+import {Card} from '../../Components/ProductCard/Card'
 
 export const Home = () => {
 
@@ -27,7 +28,8 @@ export const Home = () => {
        
           <TextoAnimado src={Img002} />
                </Background>
-      <PricingTab />
+    
+      <Card />
       <ChatbootContainer >
         {chat &&
           <Chatboot />

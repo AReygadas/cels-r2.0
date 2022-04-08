@@ -16,21 +16,24 @@ export const Nav =()=>{
     window.addEventListener('scroll', changeNavbarColor);
 
     return(
-        <Bar style={colorChange ? {background:'#1C142F', 
-        transition: '1.5s'} : {background:'transparent',transition: '1.5s'}}>
+        <Bar style={colorChange ? {textAlign:'center',background:'#1C142F', 
+        transition: '1.5s'} : {ckground:'transparent',transition: '1.5s'}}>
+            <ul style={{display:"none"}}>
             <Linka><i className="fab fa-facebook-f"></i>. Facebook</Linka>    
             <Linka><i className="fab fa-instagram"></i> Instagram</Linka>    
             <Linka><i className="fab fa-whatsapp"></i> Whatsapp</Linka>    
-            <Link to='/' style={{margin:'0 0 0 25%'}}> <Log src={Logo} /> </Link>   
+            </ul>
+            <Link to='/'> <Log src={Logo} /> </Link>   
+            <ul style={{display:"none"}}>
             <DivPages>
-
-            <Link to='/'><LinkO>Empresas</LinkO></Link>  
+            <Link to='/Business'><LinkO>Empresas</LinkO></Link>  
             <Link to='/'><LinkO>Escuelas</LinkO></Link>  
             <Link to='/'><LinkO>Gobierno</LinkO></Link>  
             <Link to='/'><LinkO>Embajadores</LinkO></Link>  
             </DivPages>
+            </ul>
             <Link to='/SignIn'><SignIN_Btn>Sign In</SignIN_Btn> </Link>
         </Bar>
-    )
-    
+    )    
 }
+
