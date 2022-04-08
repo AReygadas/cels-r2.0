@@ -1,6 +1,5 @@
 import React,{useState} from "react";
 import { Chatboot } from "../../Components/ChatBoot/Chatboot";
-import "./style.css";
 import {
   Background,
   TextoAnimado,
@@ -21,14 +20,12 @@ export const Home = () => {
 
   return (
     <>
-      <Background>
+      <TextoAnimado src={Img002} />
+
        <Vid loop autoPlay muted>
           <source src='https://celsuniversity.academy/login_loop.mp4' />
         </Vid> 
-       
-          <TextoAnimado src={Img002} />
-               </Background>
-    
+    <PricingTab />
       <Card />
       <ChatbootContainer >
         {chat &&
