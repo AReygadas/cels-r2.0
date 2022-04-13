@@ -9,14 +9,22 @@ import {
   ImageM,
   MenuResponsive,
   Menu,
-  SideMenu
+  SideMenu,Row,Col
 } from "./styles";
 import { Link } from "react-router-dom";
 import Logo from "../../Images/Logo.png";
 import MenuIcon from "../../Images/menu.png";
-import { BsFacebook,BsWhatsapp, BsInstagram,BsBuilding,BsFillPeopleFill } from 'react-icons/bs';
-import {IoIosSchool} from 'react-icons/io';
-import {FaArchway} from 'react-icons/fa'
+import MenuIcon1 from "../../Images/menu1.png";
+import MenuIcon2 from "../../Images/menu2.png";
+import {
+  BsFacebook,
+  BsWhatsapp,
+  BsInstagram,
+  BsBuilding,
+  BsFillPeopleFill,
+} from "react-icons/bs";
+import { IoIosSchool } from "react-icons/io";
+import { FaArchway, FaBars } from "react-icons/fa";
 export const Nav = () => {
   const [colorChange, setColorchange] = useState(false);
   const [Responsiv, setResponsiv] = useState(false);
@@ -32,72 +40,88 @@ export const Nav = () => {
 
   return (
     <>
-    <Bar
-      style={
-        colorChange
-          ? { textAlign: "center", background: "#1C142F", transition: "1.5s" }
-          : { background: "transparent", transition: "1.5s" }
-      }
-    >
-      <ImageM src={MenuIcon} alt="Menu" onClick={()=>{setResponsiv(!Responsiv)}}/>
+      <Bar
+        style={
+          colorChange
+            ? { textAlign: "center", background: "#1C142F", transition: "1.5s" }
+            : { background: "transparent", transition: "1.5s" }
+        }
+      >
+        <ImageM>
+          <FaBars
+            size={45}
+            onClick={() => {
+              setResponsiv(!Responsiv);
+            }}
+          />
+        </ImageM>
 
-      <MenuResponsive>
-        <Link to="/">      
-          <Log src={Logo} />
-        </Link>
-        <Link to="/SignIn">
-          <SignIN_Btn>Sign In</SignIN_Btn>
-        </Link>
-      </MenuResponsive>
+        <MenuResponsive>
+          <Link to="/">
+            <Log src={Logo} />
+          </Link>
+          <Link to="/SignIn">
+            <SignIN_Btn>Sign In</SignIN_Btn>
+          </Link>
+        </MenuResponsive>
 
-      <Menu>
-        <ul style={{display:'flex'}}>
-          <Linka>
-            <i className="fab fa-facebook-f"></i>. Facebook
-          </Linka>
-          <Linka>
-            <i className="fab fa-instagram"></i> Instagram
-          </Linka>
-          <Linka>
-            <i className="fab fa-whatsapp"></i> Whatsapp
-          </Linka>
-        </ul>
-        <Link to="/">
-          {" "}
-          <Log src={Logo} />{" "}
-        </Link>
+        <Menu>
+          <Row >
+            <Col sz='40%'>
+              <ul >
+            <DivPages>
+                <Linka>
+                  <BsFacebook /> Facebook
+                </Linka>
+                <Linka>
+                  <BsInstagram /> Instagram
+                </Linka>
+                <Linka>
+                  <BsWhatsapp /> Whatsapp
+                </Linka>
+              </DivPages>
+              </ul>
+            </Col>
+            <Col sz='10%'>
+              <Link to="/">
+                <Log src={Logo} />
+              </Link>
+            </Col>
+            <Col sz='50%'>             
+              <ul>
+                <DivPages>
+                  <Link to="/Business">
+                   <LinkO><BsBuilding />Empresas</LinkO>
+                  </Link>
+                  <Link to="/">
+                    <LinkO><IoIosSchool />Escuelas</LinkO>
+                  </Link>
+                  <Link to="/">
+                    <LinkO><FaArchway /> Gobierno</LinkO>
+                  </Link>
+                  <Link to="/">
+                    <LinkO><BsFillPeopleFill />Embajadores</LinkO>
+                  </Link>
+                </DivPages>
+              </ul>
+              <Link to="/SignIn">
+                <SignIN_Btn>Sign In</SignIN_Btn>{" "}
+              </Link>
+            </Col>
+          </Row>
+        </Menu>
+      </Bar>
+
+      <SideMenu active={Responsiv}>
         <ul>
-          <DivPages>
-            <Link to="/Business">
-              <LinkO>Empresas</LinkO>
-            </Link>
-            <Link to="/">
-              <LinkO>Escuelas</LinkO>
-            </Link>
-            <Link to="/">
-              <LinkO>Gobierno</LinkO>
-            </Link>
-            <Link to="/">
-              <LinkO>Embajadores</LinkO>
-            </Link>
-          </DivPages>
-        </ul>
-        <Link to="/SignIn">
-          <SignIN_Btn>Sign In</SignIN_Btn>{" "}
-        </Link>
-      </Menu>
-    </Bar>
-    
-    <SideMenu active={Responsiv}>
-       <ul>
-          <Linka >
-          <BsFacebook style={{color:'#4267B2'}}/> Facebook
+          <Linka style={{ color: "#4267B2" }}>
+            <BsFacebook /> Facebook
           </Linka>
-          <Linka>
-            <BsInstagram style={{color:'#8a3ab9'}}/> Instagram
+          <Linka style={{ color: "#8a3ab9" }}>
+            <BsInstagram /> Instagram
           </Linka>
-          <Linka>
-            <BsWhatsapp style={{color:'#075E54'}}/> Whatsapp
+          <Linka style={{ color: "#075E54" }}>
+            <BsWhatsapp /> Whatsapp
           </Linka>
           <Linka>
             <BsBuilding /> Empresas
@@ -112,8 +136,7 @@ export const Nav = () => {
             <BsFillPeopleFill /> Embajadores
           </Linka>
         </ul>
-    </SideMenu>
-    
+      </SideMenu>
     </>
   );
 };

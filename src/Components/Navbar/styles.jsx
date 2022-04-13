@@ -17,7 +17,7 @@ export const Bar =styled.div`
   display: flex;
   color: #fff;  
   margin: 0;
-  padding:0.5vh ;
+  padding:0 ;
     
 `;
 
@@ -26,8 +26,8 @@ export const Linka = styled.h1`
   font-weight: 300;
   margin-left:1rem ;
   padding-left: 1rem;  
-  font-size: 1.7rem;
-  margin-top: auto;
+  font-size: 1.2rem;
+  margin-top:1rem;
   
   &:hover{
     color:#00c3ff;
@@ -45,11 +45,17 @@ export const SignIN_Btn = styled.button`
   position: fixed;
   right: 0.5rem;
   top: 1rem;
-  box-shadow:3px 3px 3px rgba(20,20,20,0.5) ;
+  //box-shadow:3px 3px 3px rgba(255,255,255,0.5) ;
   font-size: 1.29rem;
   padding: 4px 13px;
-  background: linear-gradient(274deg, rgba(11,32,134,1) 0%, rgba(167,247,238,1) 100%); 
-  border-radius: 15px;  
+  background:#1C142F; 
+  border-radius: 7px;  
+  border-bottom:2px solid #8e9ed3;
+  border-left:1px solid #8e9ed3;
+  border-right:1px solid #8e9ed3;
+  //agregas el gradiente a las esquina
+  border-top:0 ;
+
   cursor: pointer;  
   &:hover{
     background: linear-gradient(274deg, rgba(4,11,43,1) 0%, rgba(20,255,228,1) 100%);
@@ -61,16 +67,16 @@ export const LinkO=styled.h1`
   font-size: 1.2rem;
   margin-right: 15px;
   text-align: right;
+  font-weight: 300;
 `;
 
 export const DivPages=styled.div`
   margin-left:5% ;
   display: flex;
 `;
-export const ImageM=styled.img`
+
+export const ImageM=styled.div`
   position: absolute;
-  height: 3rem;
-  width: auto ;
   left: 10px;
   margin-top: 10px;
   display:none ;
@@ -85,14 +91,15 @@ export  const MenuResponsive =styled.div`
     display:flex;    
   }
   display: none;
-`
+`;
 
 export  const Menu =styled.div`
+width:100% ;
  @media screen and (min-width: 600px) {
     display:flex;    
   }
   display: none;
-`
+`;
 
 export const SideMenu =styled.div`
   height: 100%;
@@ -101,12 +108,21 @@ export const SideMenu =styled.div`
   z-index: 1; /* Sit on top */
   left: 0;
   top: 0;
-  background-color: rgba(20,20,20, 0.6); /* Black w/opacity */
+  background-color: rgba(20,20,20, 0.9); /* Black w/opacity */
   overflow-x: hidden; /* Disable horizontal scroll */
   color: #fff ;
   padding-top: 25%;
   transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
   text-align: left;
   
+`;
 
+export const Row =styled.div`
+  width: 100% ;
+  height:auto ;
+  display: flex ;
+`
+export const Col =styled.div`
+  width: ${props => props.sz};
+ 
 `
