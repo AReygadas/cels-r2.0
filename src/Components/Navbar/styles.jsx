@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Bar =styled.div`
-  position: flex;
+  position: fixed;
   left: 0;
   top: 0;
   right: 0;
@@ -22,17 +22,15 @@ export const Bar =styled.div`
 `;
 
 export const Linka = styled.h1`
-  @import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");
-  @import url("https://fonts.googleapis.com/css2?family=Pangolin&display=swap");
-  text-align: center;
+  text-align: left;
   font-weight: 300;
-  font-family: "Roboto", sans-serif;
+  margin-left:1rem ;
   padding-left: 1rem;  
-  font-size: 1.3rem;
+  font-size: 1.7rem;
   margin-top: auto;
   
   &:hover{
-    color:#6C82FD;
+    color:#00c3ff;
   }
 `;
 
@@ -69,3 +67,46 @@ export const DivPages=styled.div`
   margin-left:5% ;
   display: flex;
 `;
+export const ImageM=styled.img`
+  position: absolute;
+  height: 3rem;
+  width: auto ;
+  left: 10px;
+  margin-top: 10px;
+  display:none ;
+  cursor:pointer;
+  @media screen and (max-width: 600px) {
+    display:flex;    
+  }
+`;
+
+export  const MenuResponsive =styled.div`
+ @media screen and (max-width: 600px) {
+    display:flex;    
+  }
+  display: none;
+`
+
+export  const Menu =styled.div`
+ @media screen and (min-width: 600px) {
+    display:flex;    
+  }
+  display: none;
+`
+
+export const SideMenu =styled.div`
+  height: 100%;
+  width: ${props => props.active ? '100%' : '0'};
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgba(20,20,20, 0.6); /* Black w/opacity */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  color: #fff ;
+  padding-top: 25%;
+  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  text-align: left;
+  
+
+`
