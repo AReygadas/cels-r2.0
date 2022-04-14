@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import banner from "../../Images/fondoMenu.png"
 
 export const Bar =styled.div`
   position: fixed;
@@ -102,17 +103,18 @@ width:100% ;
 `;
 
 export const SideMenu =styled.div`
-  height: 100%;
-  width: ${props => props.active ? '100%' : '0'};
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   left: 0;
   top: 0;
-  background-color: rgba(20,20,20, 0.9); /* Black w/opacity */
+  background:url(${banner}) no-repeat;  /* Black w/opacity */
+  background-size: 100vw ;
+  width: ${props => props.active ? '100%' : '0'};
+  height: 100%;
   overflow-x: hidden; /* Disable horizontal scroll */
-  color: #fff ;
-  padding-top: 25%;
-  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  color: #000 ;
+  padding-top: 60%;
+  transition: 0.5s ease-out;
   text-align: left;
   
 `;
@@ -124,5 +126,13 @@ export const Row =styled.div`
 `
 export const Col =styled.div`
   width: ${props => props.sz};
+ 
+`
+
+export const Sepa =styled.div`
+  width: 90%;
+  height: 2px ;
+  background:rgba(20,20,20,0.2) ;
+  margin-left:5% ;
  
 `

@@ -9,13 +9,13 @@ import {
   ImageM,
   MenuResponsive,
   Menu,
-  SideMenu,Row,Col
+  SideMenu,
+  Row,
+  Col,
+  Sepa,
 } from "./styles";
 import { Link } from "react-router-dom";
 import Logo from "../../Images/Logo.png";
-import MenuIcon from "../../Images/menu.png";
-import MenuIcon1 from "../../Images/menu1.png";
-import MenuIcon2 from "../../Images/menu2.png";
 import {
   BsFacebook,
   BsWhatsapp,
@@ -66,41 +66,52 @@ export const Nav = () => {
         </MenuResponsive>
 
         <Menu>
-          <Row >
-            <Col sz='40%'>
-              <ul >
-            <DivPages>
-                <Linka>
-                  <BsFacebook /> Facebook
-                </Linka>
-                <Linka>
-                  <BsInstagram /> Instagram
-                </Linka>
-                <Linka>
-                  <BsWhatsapp /> Whatsapp
-                </Linka>
-              </DivPages>
+          <Row>
+            <Col sz="40%">
+              <ul>
+                <DivPages>
+                  <Linka>
+                    <BsFacebook /> Facebook
+                  </Linka>
+                  <Linka>
+                    <BsInstagram /> Instagram
+                  </Linka>
+                  <Linka>
+                    <BsWhatsapp /> Whatsapp
+                  </Linka>
+                </DivPages>
               </ul>
             </Col>
-            <Col sz='10%'>
+            <Col sz="10%">
               <Link to="/">
                 <Log src={Logo} />
               </Link>
             </Col>
-            <Col sz='50%'>             
+            <Col sz="50%">
               <ul>
                 <DivPages>
                   <Link to="/Business">
-                   <LinkO><BsBuilding />Empresas</LinkO>
+                    <LinkO>
+                      <BsBuilding />
+                      Empresas
+                    </LinkO>
                   </Link>
                   <Link to="/">
-                    <LinkO><IoIosSchool />Escuelas</LinkO>
+                    <LinkO>
+                      <IoIosSchool />
+                      Escuelas
+                    </LinkO>
                   </Link>
                   <Link to="/">
-                    <LinkO><FaArchway /> Gobierno</LinkO>
+                    <LinkO>
+                      <FaArchway /> Gobierno
+                    </LinkO>
                   </Link>
                   <Link to="/">
-                    <LinkO><BsFillPeopleFill />Embajadores</LinkO>
+                    <LinkO>
+                      <BsFillPeopleFill />
+                      Embajadores
+                    </LinkO>
                   </Link>
                 </DivPages>
               </ul>
@@ -114,15 +125,6 @@ export const Nav = () => {
 
       <SideMenu active={Responsiv}>
         <ul>
-          <Linka style={{ color: "#4267B2" }}>
-            <BsFacebook /> Facebook
-          </Linka>
-          <Linka style={{ color: "#8a3ab9" }}>
-            <BsInstagram /> Instagram
-          </Linka>
-          <Linka style={{ color: "#075E54" }}>
-            <BsWhatsapp /> Whatsapp
-          </Linka>
           <Linka>
             <BsBuilding /> Empresas
           </Linka>
@@ -135,6 +137,19 @@ export const Nav = () => {
           <Linka>
             <BsFillPeopleFill /> Embajadores
           </Linka>
+          <Sepa />
+
+          <Linka>
+            <BsFacebook style={{ color: "#5586e9" }} /> Facebook
+          </Linka>
+          <Linka>
+            <BsInstagram style={{ color: "#f028f0" }} /> Instagram
+          </Linka>
+          <Linka>
+            <BsWhatsapp style={{ color: "#00c91b" }} /> Whatsapp
+          </Linka>
+
+          <Sepa />
         </ul>
       </SideMenu>
     </>
