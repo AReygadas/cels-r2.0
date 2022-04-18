@@ -11,8 +11,8 @@ export const Bar =styled.div`
   //background: #1C142F;;
   //background: rgba(20,20,20,.1)!important;
   background:transparent ;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  /* -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px); */
   z-index: 99999;
   text-align: left;
   display: flex;

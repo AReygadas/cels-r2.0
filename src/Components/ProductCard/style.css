@@ -20,21 +20,20 @@
     width: 71.5vw;
     height: 100vw;
     position: relative;
-    overflow: hidden;
     margin: 20px;
-    overflow: hidden;
     z-index: 10;
     touch-action: none;
-    border-radius: 5%/3.5%;
+    border-radius: 15px;
     box-shadow: -5px -5px 5px -5px var(--color1), 5px 5px 5px -5px var(--color2), -7px -7px 10px -5px transparent, 7px 7px 10px -5px transparent, 0 0 5px 0px rgba(255, 255, 255, 0), 0 55px 35px -20px rgba(0, 0, 0, 0.5);
     transition: transform 0.5s ease, box-shadow 0.2s ease;
     will-change: transform, filter;
     background-color: #040712;
-    background-image: var(--front);
+    background-image: var(--charizardfront);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
     transform-origin: center;
+    margin: 0 35px;
   }
   @media screen and (min-width: 600px) {
     .cardx {
@@ -86,6 +85,8 @@
     opacity: 0.5;
     mix-blend-mode: color-dodge;
     transition: all 0.33s ease;
+    cursor: pointer;
+    border-radius: 15px;
   }
   
   .cardx:before {
@@ -95,6 +96,7 @@
     opacity: 0.5;
     filter: brightness(0.5) contrast(1);
     z-index: 1;
+    border-radius: 15px;
   }
   
   .cardx:after {
@@ -108,6 +110,7 @@
     transition: all 0.33s ease;
     mix-blend-mode: color-dodge;
     opacity: 0.75;
+    border-radius: 15px;
   }
   
   .cardx.active:after,
@@ -313,6 +316,7 @@
   .demo .cardx {
     background-image: var(--back);
     font-size: 2vh;
+    
   }
   
   .demo .cardx > span {
@@ -370,11 +374,11 @@
   
   .demo,
   .cardsx {
-   display:flex;
+    
+    display:flex;
     flex-direction: row;
-    padding-top: 20%;
+    padding-top: 5%;
     align-items: center;
-    justify-content: space-evenly;
     perspective: 2000px;
     position: relative;
     z-index: 1;
@@ -383,13 +387,17 @@
   
   .demo {
     flex-direction: row;
-    justify-content: center;
   }
   
   @media screen and (max-width: 600px) {
     .cardsx {
-      display:block;
+      display:flex;
       flex-direction: row;
+      width: 100vw;
+      overflow-x: scroll;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x proximity;
+      
     }
   }
   .cardsx .cardx:nth-child(2), .cardsx .cardx:nth-child(2):before, .cardsx .cardx:nth-child(2):after {
@@ -408,4 +416,5 @@
     position: absolute;
     z-index: 1000;
     margin-top: -50px;
+    color:#fff;
   }

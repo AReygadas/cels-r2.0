@@ -1,11 +1,6 @@
 import styled,{keyframes} from 'styled-components'
 
-export const Background=styled.div`
-    width:100vw ;
-    height:100vh ;
-    background:transparent;    
-    text-align:center;
-`;
+//ANIMATIONS
 
 const gradient = keyframes`
     0% {
@@ -16,6 +11,16 @@ const gradient = keyframes`
     }
 `;
 
+//COMPONENTS STYLED
+
+export const Background=styled.div`
+    width:100vw ;
+    height:100vh ;
+    background:transparent;    
+    text-align:center;
+`;
+
+
 export const LogoC = styled.img`
   width: 16rem;
   height:auto;
@@ -23,11 +28,13 @@ export const LogoC = styled.img`
 
 `;
 export const Padre=styled.div`
-height: 100vh;
+   height: 100vh;
+   width: 95vw;
    /*IMPORTANTE*/
   display: flex;
   justify-content: center;
   align-items: center;
+  margin:auto ;
 `;
 
 export const Card = styled.div`
@@ -37,8 +44,8 @@ export const Card = styled.div`
       padding:0 ;
     //padding: 4% 3% 10% 3%;
     position: relative;        
-    height: 35vh;
-    width: 20vw;    
+    height: auto;
+    width: 90vw;    
     box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
     border-radius: 7px;
     background: rgba(255,255,255,0.1);
@@ -50,9 +57,12 @@ export const Card = styled.div`
 `;
 
 export const DivAcount = styled.div`
- display:flex;
- color:#fff ;
-`
+  margin-top:4vh ;
+  display:block;
+  color:#fff ;
+  width:100% ;
+  text-align:right ;
+ `
 export const InputA = styled.input`
    border-style: none;
     background: transparent;
@@ -69,7 +79,7 @@ export const InputA = styled.input`
 export const InputD=styled.div`
     position: relative;
     padding: 10px;
-
+    margin-top:20px;
     &::after{
     content: "";
     position: absolute;
@@ -145,6 +155,6 @@ export const CardHeader = styled.div`
   background: linear-gradient(274deg, rgba(8,44,125,1) 0%, rgba(20,175,255,1) 100%);
   width: 100% ;
   padding: 30px 7px 7px 7px ;
-  
+  margin-bottom:3vh ;
 
 `

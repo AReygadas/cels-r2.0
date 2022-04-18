@@ -1,11 +1,16 @@
 import React from "react";
 import {Background2} from './styles'
 import { Card } from "../../../Components/ProductCard/Card";
+import {Row, Titulo0} from '../../../GlobalStyles';
+
 export const Section2 = () =>{
 
     return(
-        <Background2 inputColor="linear-gradient(117deg, rgba(47,222,255,1) 0%, rgba(0,6,61,1) 100%);">
-            <Card />
+        <Background2>
+            <Row>
+                <Titulo0>Nuestros Productos</Titulo0>
+            </Row>
+                <Card />            
         </Background2>
     )
 }

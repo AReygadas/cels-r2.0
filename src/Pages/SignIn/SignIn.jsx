@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Swal from "sweetalert2";
-import { CardHeader, TT01, Background,Padre, Card, InputD, InputA, SingButton, Vid,LogoC,DivAcount } from "./styles";
-import Logo from '../../Images/Logo.png'
+import { CardHeader, TT01, Background,Padre, Card, InputD, InputA, SingButton, Vid,Vid2,DivAcount } from "./styles";
+
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 import { gapi } from "gapi-script";
 import { FaGooglePlusG,FaFacebookF  } from "react-icons/fa";
@@ -55,6 +55,7 @@ export const SignIn = () => {
     }
     console.log(credentials);
   };
+  
 
   const responseGoogle = (response) => {
     console.log(response);
@@ -75,16 +76,12 @@ export const SignIn = () => {
 
   return (
     <Background>
-      <Vid loop autoPlay muted>
-          <source src='https://celsuniversity.academy/login_loop.mp4' />
-      </Vid>
-      {/* <LogoC src={Logo} /> */}
+         {/* <LogoC src={Logo} /> */}
       <Padre>
         <Card style={{ height:"auto"}}>
           <CardHeader >
             <TT01>Log in</TT01>            
-            < GoogleLogin
-                 
+            < GoogleLogin                 
                 clientId = "567951774801-h1ll3t6sqsac1hldm26ioqihvigprrad.apps.googleusercontent.com" 
                 buttonText = "Iniciar sesión" 
                 onSuccess = { responseGoogle } 
@@ -95,12 +92,11 @@ export const SignIn = () => {
                 )}
               />           
             <FaFacebookF size={40} />
-          </CardHeader>
-          
+          </CardHeader>          
           <div style={{padding:"4%", height:"50vh"}}>
           <InputD>
             <InputA
-              placeholder="Nombre"
+              placeholder="Correo"
               onChange={(e) => {
                 setCredentials({
                   ...credentials,
@@ -111,7 +107,7 @@ export const SignIn = () => {
           </InputD>
           <InputD>
             <InputA
-              placeholder="Correo"
+              placeholder="Contraseña"
               onChange={(e) => {
                 setCredentials({
                   ...credentials,
@@ -119,17 +115,14 @@ export const SignIn = () => {
                 });
               }}
             />
-          </InputD>
-        
+          </InputD>        
           <br />
           <SingButton onClick={() => handleSubmit()}> Aceptar </SingButton>
           <br />
+          <SingButton onClick={() => handleSubmit()}> Create newaccount </SingButton>         
           <DivAcount>
-          <input type='checkbox' />
-          <p>Remember me</p> | <p>Forgot Password?</p>
-          </DivAcount>
-          <SingButton onClick={() => handleSubmit()}> Create newaccount </SingButton>
-          
+          <p>Forgot Password?</p>
+          </DivAcount>          
           {/* <GoogleLogout
               clientId = "567951774801-h1ll3t6sqsac1hldm26ioqihvigprrad.apps.googleusercontent.com" 
               buttonText = "cerrar sesion" 

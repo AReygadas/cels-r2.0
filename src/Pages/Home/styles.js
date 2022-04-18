@@ -146,6 +146,7 @@ export const ChatbootContainer = styled.div`
   bottom: 3px ;
   right:5px;
   text-align:right;
+  z-index:500 ;
 `
 
 export const ChatImage = styled.img`

@@ -5,7 +5,8 @@ import VidU from "../../Images/CardU.mp4";
 import VidA from "../../Images/CardAdventures.mp4";
 import VidUs from "../../Images/CardUS.mp4";
 import VidTV from "../../Images/CardTV.mp4";
-import { Button } from "react-bootstrap";
+import { ButtonCard, T1, T2 } from "./styles";
+import {IoArrowRedoOutline} from 'react-icons/io5'
 
 export const Card = () => {
   useEffect(() => {
@@ -70,34 +71,58 @@ export const Card = () => {
   });
 
   return (
-    <section className="cardsx">
-      <div className="cardx  animated">
-        <video  loop autoPlay muted height="100%"  >
+    
+    <div className="cardsx">
+      <div className="cardx charizard animated">
+        <video  loop autoPlay muted height="100%"  style={{borderRadius:'15px'}}>
           <source src={VidU} />
         </video>
-        <div style={{marginTop:'-190px', textAlign:'center'}}>
-          <h4>CELS UNIVERSITY</h4>
-          <h4>$119  MNX</h4>
-
-          <h4>CELS UNIVERSITY</h4>
-        <button>AAAAAAAAAAAA</button>
+        <div style={{marginTop:'-190px', textAlign:'center', color:'#fff'}}>
+          <T1>CELS U</T1>
+          <T2>ENGLISH UNIVERSITY</T2>
+       
+          <ButtonCard>Ver Mas <IoArrowRedoOutline /></ButtonCard>
         </div>
       </div>
+
       <div className="cardx  animated">
-        <video loop autoPlay muted height="100%">
+        <video loop autoPlay muted height="100%" style={{borderRadius:'15px'}}>
           <source src={VidA} />
         </video>
+        <br/>
+        <br/>
+        <div style={{marginTop:'-190px', textAlign:'center', color:'#fff'}}>
+          <T1>ADVENTURES</T1>
+          <T2>VIVE TU AVENTURA</T2>
+       
+          <ButtonCard>Ver Mas <IoArrowRedoOutline /></ButtonCard>
+        </div>
       </div>
+
       <div className="cardx  animated">
-        <video loop autoPlay muted height="100%">
+        <video loop autoPlay muted height="100%" style={{borderRadius:'15px'}}>
           <source src={VidUs} />
         </video>
+        <div style={{marginTop:'-190px', textAlign:'center', color:'#fff'}}>
+          <T1>CELS US</T1>
+          <T2>THE BETTER PATH TO CITIZENSHIP</T2>
+       
+          <ButtonCard>Ver Mas <IoArrowRedoOutline /></ButtonCard>
+        </div>
       </div>
+
       <div className="cardx  animated">
-        <video loop autoPlay muted height="100%">
+        <video loop autoPlay muted height="100%" style={{borderRadius:'15px'}}>
           <source src={VidTV} />
         </video>
+        <div style={{marginTop:'-190px', textAlign:'center', color:'#fff'}}>
+          <T1>CELS TV</T1>
+          <T2>ENGLISH FOR OUR GENERATION</T2>
+       
+          <ButtonCard>Ver Mas <IoArrowRedoOutline /></ButtonCard>
+        </div>
       </div>
-    </section>
+
+    </div>
   );
 };

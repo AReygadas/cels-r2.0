@@ -7,7 +7,7 @@ function Layout(props){
         <div> 
           <Nav />
           {props.children}
-          {/* <Foother /> */}
+         <Foother /> 
         </div>
     )
 }
