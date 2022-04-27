@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {
   LinkO,
   Bar,
@@ -25,7 +25,11 @@ import {
 } from "react-icons/bs";
 import { IoIosSchool } from "react-icons/io";
 import { FaArchway, FaBars } from "react-icons/fa";
+import { DataContext } from "../../Context/Context";
+
 export const Nav = () => {
+  const ctx = useContext(DataContext);
+
   const [colorChange, setColorchange] = useState(false);
   const [Responsiv, setResponsiv] = useState(false);
 
@@ -115,9 +119,13 @@ export const Nav = () => {
                   </Link>
                 </DivPages>
               </ul>
-              <Link to="/SignIn">
-                <SignIN_Btn>Sign In</SignIN_Btn>{" "}
-              </Link>
+              {ctx.IsAuth ? (                
+                <h2 onClick={()=>ctx.activateAuth(false)}>Arturo</h2>
+              ) : (
+                <Link to="cels-r/SignIn">
+                  <SignIN_Btn >Login</SignIN_Btn>
+               </Link>
+              )}
             </Col>
           </Row>
         </Menu>

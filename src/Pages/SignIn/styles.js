@@ -14,8 +14,7 @@ const gradient = keyframes`
 //COMPONENTS STYLED
 
 export const Background=styled.div`
-    width:100vw ;
-    height:100vh ;
+    
     background:transparent;    
     text-align:center;
 `;
@@ -35,13 +34,15 @@ export const Padre=styled.div`
   justify-content: center;
   align-items: center;
   margin:auto ;
+  max-width:500px ;
 `;
 
 export const Card = styled.div`
     color:#fff ;
     margin-top:5rem;
     margin: auto ;
-      padding:0 ;
+    padding:15px 0 15px 0 ;
+    display:flex ;
     //padding: 4% 3% 10% 3%;
     position: relative;        
     height: auto;
@@ -49,7 +50,7 @@ export const Card = styled.div`
     box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
     border-radius: 7px;
     background: rgba(255,255,255,0.1);
-    overflow: hidden;
+    overflow: contain;
     text-align:center;
     border-top: 1px solid rgba(255,255,255,0.5);
     border-left: 1px solid rgba(255,255,255,0.5);
@@ -75,6 +76,7 @@ export const InputA = styled.input`
         color: rgb(255, 255, 255, 0.7);
     }
 `;
+
 
 export const InputD=styled.div`
     position: relative;
@@ -121,10 +123,22 @@ export const LogoU = styled.img`
 
 export const Vid = styled.video`
   position: absolute;
-  display:flex ;
-  height: auto;
+  height:100vh ;
+  z-index: -1;
+  @media screen and (max-width: 600px) {
+    display:flex;    
+  }
+  display: none;
+`;
+
+export const Vid2 = styled.video`
+  position: absolute;
   width: 100vw;
   z-index: -1;
+  @media screen and (min-width: 600px) {
+    display:flex;    
+  }
+  display: none;
 `;
 
 export const Title1 = styled.h1`
@@ -153,8 +167,7 @@ export const TT01=styled.h1`
 
 export const CardHeader = styled.div`
   background: linear-gradient(274deg, rgba(8,44,125,1) 0%, rgba(20,175,255,1) 100%);
-  width: 100% ;
-  padding: 30px 7px 7px 7px ;
-  margin-bottom:3vh ;
+  width: 40% ;
+  padding: 30px 7px 7px 7px ;  
 
 `
